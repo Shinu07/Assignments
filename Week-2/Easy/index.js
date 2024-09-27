@@ -1,37 +1,6 @@
-//!  try to code a counter in Javascript It should go up as time goes by in intervals of 1 second
-
-
-// function time() {
-//     let i = 1 
-//       const intervalId=  setInterval(()=>{
-//             console.log(i);
-//             i++;
-//             if(i===20){
-//                 clearInterval(intervalId)
-//             }
-//         },2000)
-// }
-
-// time()
-
-//! Without using setInterval, try to code a counter in Javascript. There is a hint at the bottom of the file if you get stuck.
-
-// function counterTimer() {
-//     for (let i = 0; i < 8; i++) {
-//         setTimeout(() => {
-//             console.log(i)
-//         },i* 2000)
-//     }
-
-// }
-// counterTimer()
-
 
 /*  Write code to read contents of a file and print it to the console. You can use the fs library to as a black box, the goal is to understand async tasks. Try to do an expensive operation below the file read and see how it affects the output. Make the expensive operation more and more expensive and see how it affects the output.
 */
-
-
-
 
 
 const fs = require("fs")
