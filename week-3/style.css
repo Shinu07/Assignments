@@ -1,0 +1,126 @@
+body {
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(254, 252, 250);
+}
+
+.todo-container {
+  background-color: rgb(255, 246, 229);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 70px rgba(1, 0, 0, 0.1);
+  width: 350px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.input-container {
+  display: flex;
+  margin-bottom: 20px;
+  border: none;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ffd79e;
+  border-radius: 10px 0 0 10px;
+}
+
+#add-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background: rgb(255, 138, 4);
+  color: white;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+}
+
+#add-button:hover {
+  background: rgb(243, 172, 91);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+li:hover {
+  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.1);
+}
+ul li {
+  background-color: #fffae6;
+  margin-bottom: 10px;
+  padding: 12px 10px 12px 40px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-image: url(./circle.png);
+  background-size: cover;
+  background-position: center;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+ul li.checked::before {
+  background-image: url(./check-circle.png);
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.todo-text.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.edit-button {
+  background-color: #ffd500;
+  color: #fff;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.edit-button,
+.delete-button {
+  text-decoration: none !important;
+}
