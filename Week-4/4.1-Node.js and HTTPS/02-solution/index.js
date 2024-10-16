@@ -88,21 +88,22 @@ program
 program
   .command('mark <todoTitle>')
   .description('Mark a todo item as done')
-  .action(async (todoTitle) => {
+ .action(async (todoTitle) => {
     try {
-      const todos = await readTodos();
-      const todoIndex = todos.findIndex((todo) => todo.Title === todoTitle);
-      if (todoIndex !== -1) {
-        todos[todoIndex].Done = true;
-        await writeTodos(todos);
-        console.log('Todo marked as done!');
-      } else {
-        console.log('Todo not found');
-      }
+        const todos = await readTodos();
+        const todo = todos.find(todo => todo.Title === todoTitle);
+
+        if (todo) {
+            todo.Done = true;
+            await writeTodos(todos);
+            console.log('Todo marked as done!');
+        } else {
+            console.log('Todo not found');
+        }
     } catch (error) {
-      console.error('Error marking todo as done:', error.message);
+        console.error('Error marking todo as done:', error.message);
     }
-  });
+});
 
 program
   .command('list')
