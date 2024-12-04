@@ -18,8 +18,7 @@ const express = require ('express')
     // middleware to validate the function 
 
     function validateInput(req,res,next){
-        const a = req.body.a;
-        const b = req.body.b;
+        const { a, b } = req.body
 
         console.log(isNaN(a),isNaN(b));
         
@@ -40,9 +39,7 @@ const express = require ('express')
     app.use(validateInput)
 
     app.post("/sum",(req,res)=>{
-
-        const a = parseInt(req.body.a)
-        const b = parseInt(req.body.b)
+        const { a, b } = req.body
 
         res.send({
             result: a + b
@@ -51,9 +48,7 @@ const express = require ('express')
 
     app.post("/ssubtrac",(req,res)=>{
 
-        const a = parseInt(req.body.a)
-        const b = parseInt(req.body.b)
-
+        const { a, b } = req.body
         res.send({
             result: a - b
         })
@@ -62,8 +57,7 @@ const express = require ('express')
 
     app.post("/multiply",(req,res)=>{
 
-        const a = parseInt(req.body.a)
-        const b = parseInt(req.body.b)
+        const { a, b } = req.body
 
         res.send({
             result: a*b
@@ -72,9 +66,7 @@ const express = require ('express')
 
     app.post("/divide",(req,res)=>{
 
-        const a = parseInt(req.body.a)
-        const b = parseInt(req.body.b)
-
+        const { a, b } = req.body
         res.send({
             result: a / b
         })
